@@ -1,0 +1,7 @@
+# Ther required packages and libraries for the projects
+ipykernel
+matplotlib
+seaborn
+pandas
+scikit-learn
+graphviz
