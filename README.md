@@ -61,6 +61,7 @@ jupyter notebook task_name_solution.ipynb
 ## Tasks List:
 1. [Predict Advertisement Response](tasks/Predict_Advertisement_Response/ads_task.ipynb) - A supervised model to predict the response of residents to direct mailing advertisements.
 2. [Predictive Modeling for Material Strength](tasks/Predictive_Modeling_for_Material_Strength/DS_task_final.ipynb) - a regression-based predictive model to estimate the material strength.
+3. [Recipe Recommender for Grocery Apps](tasks/Recommendation_System_Food_Recipes/Recipe_Recommender_System_for_Grocery_App_gt.pdf): Presentation slides detailing the business proposal, system architecture, and implementation strategy.
 3. [Other tasks will be added soon]
 
 
