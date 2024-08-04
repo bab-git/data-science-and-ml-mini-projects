@@ -24,6 +24,9 @@ The data describes the information collected about a group of residents to whom 
 1. Build a predictive model that uses the nine input features to predict the resident's response to the advertisement.
 2. Identify the characteristics of an ideal resident who is most likely to respond positively to the advertisement.
 
+## Contents
+- [Solution Notebook: Predict Advertisement Response](ads_task.ipynb) - A supervised model to predict the response of residents to direct mailing advertisements.
+  
 ## Methodology
 
 The approach to solving this task involves the following steps:

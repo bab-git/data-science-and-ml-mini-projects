@@ -18,6 +18,9 @@ The dataset provided includes the target variable 'Y', which is the mean of six 
 3. **Evaluation Metric**:
    - The model's performance on unseen data will be evaluated using Mean Absolute Error (MAE).
 
+## Contents
+- [Solution Notebook: Predictive Modeling for Material Strength](DS_task_final.ipynb) - A regression-based predictive model to estimate the material strength.
+  
 ## Methodology
 
 ### Data Preprocessing
