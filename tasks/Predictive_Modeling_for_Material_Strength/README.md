@@ -1,5 +1,7 @@
 # Predictive Modeling for Material Strength
 
+<img src="image.png" alt="Predictive Modeling for Material Strength" width="800"/>
+
 ## Description
 
 This task involves developing a predictive model for material strength based on easily accessible chemical and mechanical properties. The goal is to avoid waiting for time-consuming and costly laboratory measurements.    
