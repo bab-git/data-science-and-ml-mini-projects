@@ -5,3 +5,12 @@ seaborn
 pandas
 scikit-learn
 graphviz
+psycopg2
+python-dotenv
+scipy
+openpyxl
+shap
+notebook
+ipywidgets
+plotly
+pmdarima
