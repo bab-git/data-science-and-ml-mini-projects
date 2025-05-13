@@ -34,28 +34,36 @@ Feel free to explore the notebooks. If you have any questions about the approach
 git clone https://github.com/bab-git/data-science-interviews.git
 ```
 
-2. Create a virtual environment:
-```bash 
-python -m venv .env
-souce .env/bin/activate
+2. Python Environment Setup:
+Ensure you have Python 3.12.0 installed. You can install it using [pyenv](https://github.com/pyenv/pyenv):
+```bash
+pyenv install 3.12.0
+pyenv local 3.12.0
 ```
 
-3. Install the required packages:
-Using Python v3.12.0:
+3. Use `make` to set up your environment (strict setup recommended):
+- Option A — Strict (preferred for reproducibility)
 ```bash
-pyenv version 3.12.0
-pip install -r requirements_strict.txt
+make setup          # for strict requirements
 ```
-Note: If you are using another version of Python, the above dependency versions may fail to install. 
-In that case, you can use the flexible version below. But then you may need to adjust the notebook code where you find a syntax error.
+- Option B — Flexible (use with caution)
 ```bash
-pip install -r requirements.txt
+make setup-flex     # for flexible requirements
 ```
+  - ⚠️ This is more forgiving with package versions but may require minor code fixes depending on Python version.
 
-4. Navigate to a specific project folder and open the Jupyter notebook:
+4. Run a specific task notebook:
 ```bash
-cd tasks/task_name
-jupyter notebook task_name_solution.ipynb
+make notebook TASK=task_folder_name
+```
+This will:
+- Check that your Python version is 3.12.0
+- Install any task-specific `requirements.txt` if available
+- Launch Jupyter Notebook in the given task directory
+
+5. To reset the environment:
+```bash
+make clean
 ```
 
 ## Tasks List:

@@ -1,4 +1,4 @@
 .*env
 temp/
-.python-version
+# .python-version
 *checkpoints/
