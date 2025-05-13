@@ -24,26 +24,36 @@ check-python:
 
 UNAME_S := $(shell uname -s)
 
-.PHONY: check-libomp
-check-libomp:
-ifeq ($(UNAME_S),Darwin)
-	@brew list libomp >/dev/null 2>&1 && \
-		echo "✅ libomp is installed." || \
-		(echo \"❌ libomp is missing. Run: brew install libomp\"; exit 1)
-else
-	@echo "ℹ️  libomp check skipped (non-macOS system)"
-endif
+# Combined environment check (fatal on error)
+.PHONY: check-env
+check-env:
+	@echo "🔍 Checking Python version..."
+	@python3 --version | grep -q "Python $(PYTHON_VERSION)" || \
+	    (echo "❌ Error: Python $(PYTHON_VERSION) is required."; exit 1)
+	@echo "✅ Python $(PYTHON_VERSION) detected."
+	@echo "🔍 Checking Graphviz 'dot' executable..."
+	@command -v dot >/dev/null 2>&1 || \
+	    (echo "❌ Error: 'dot' not found. Install Graphviz (e.g., 'brew install graphviz')."; exit 1)
+	@echo "✅ Graphviz 'dot' found."
+	@echo "🔍 Checking OpenMP runtime on macOS..."
+	@if [ "$(UNAME_S)" = "Darwin" ]; then \
+		brew list libomp >/dev/null 2>&1 || \
+		(echo "❌ Error: libomp missing. Run 'brew install libomp'."; exit 1); \
+		echo "✅ libomp is installed."; \
+	else \
+		echo "ℹ️  OpenMP check skipped (non-macOS)."; \
+	fi
 
-
+#
 # Setup with strict requirements (requires correct Python)
 .PHONY: setup
-setup: check-python check-libomp $(VENV_DIR)/bin/activate
+setup: check-env $(VENV_DIR)/bin/activate
 	@$(VENV_DIR)/bin/pip install --upgrade pip
 	@$(VENV_DIR)/bin/pip install -r $(REQUIREMENTS_STRICT)
 
 # Setup with flexible requirements (requires correct Python)
 .PHONY: setup-flex
-setup-flex: check-python check-libomp $(VENV_DIR)/bin/activate
+setup-flex: check-env $(VENV_DIR)/bin/activate
 	@$(VENV_DIR)/bin/pip install --upgrade pip
 	@$(VENV_DIR)/bin/pip install -r $(REQUIREMENTS)
 
@@ -53,7 +63,7 @@ $(VENV_DIR)/bin/activate:
 
 # Install task-specific requirements if present
 .PHONY: task-setup
-task-setup: check-python
+task-setup: check-env
 ifndef TASK
 	$(error TASK is not set. Use 'make notebook TASK=task_name')
 endif
