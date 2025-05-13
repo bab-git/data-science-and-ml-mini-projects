@@ -63,7 +63,8 @@ jupyter notebook task_name_solution.ipynb
 2. [Predictive Modeling for Material Strength](tasks/Predictive_Modeling_for_Material_Strength/README.md) - a regression-based predictive model to estimate the material strength.
 3. [Recipe Recommender for Grocery Apps](tasks/Recommendation_System_Food_Recipes/README.md): Presentation slides detailing the business proposal, system architecture, and implementation strategy for a Recipe Recommender System.
 4. [Customer Satisfaction Prediction](tasks/Customer_Satisfaction_Prediction/README.md): A classification model to predict customer satisfaction of an online store based on demographic, transactional, and behavioral data.
-5. [Other tasks will be added soon]
+5. [Hotel Staff Size Estimation via Regression](tasks/Hotel_Staff_Size_Estimation_via_Regression/README.md): A regression model to estimate the optimal number of hotel staff for prospective buyers based on various hotel characteristics.
+6. [Other tasks will be added soon]
 
 
 ## Relevant Skills
